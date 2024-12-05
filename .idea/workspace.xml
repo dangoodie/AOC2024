@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01485e84-e426-4056-963e-7e95ccd617c5" name="Changes" comment="Day 3 complete" />
+    <list default="true" id="01485e84-e426-4056-963e-7e95ccd617c5" name="Changes" comment="Day 3 complete">
+      <change afterPath="$PROJECT_DIR$/2024/day4/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2024/day4/solution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2024/day4/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +24,12 @@
     &quot;assignee&quot;: &quot;dangoodie&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dangoodie/Advent-Of-Code.git",
-    "accountId": "f767af56-d63d-409f-8f01-0556c6cb0f80"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dangoodie/Advent-Of-Code.git&quot;,
+    &quot;accountId&quot;: &quot;f767af56-d63d-409f-8f01-0556c6cb0f80&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -36,30 +41,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1 (1).executor": "Run",
-    "Python.1.executor": "Run",
-    "Python.part1 (1).executor": "Run",
-    "Python.part1 (2).executor": "Run",
-    "Python.part1 (3).executor": "Run",
-    "Python.part1.executor": "Run",
-    "Python.part2 (1).executor": "Run",
-    "Python.part2 (2).executor": "Run",
-    "Python.part2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/squid/PycharmProjects/Advent-Of-Code/2024/day3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.part1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.part1 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.part1 (3).executor&quot;: &quot;Run&quot;,
+    &quot;Python.part1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.part2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.part2 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.part2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/squid/PycharmProjects/Advent-Of-Code/2024/day3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/2024/day3" />
@@ -68,7 +74,7 @@
       <recent name="C:\Users\dango\PycharmProjects\AOC2024\day1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.part2">
+  <component name="RunManager" selected="Python.solution">
     <configuration name="part1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AOC2024" />
       <option name="ENV_FILES" value="" />
@@ -138,29 +144,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="part2 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AOC2024" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2023/day1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2023/day1/part2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="part2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AOC2024" />
       <option name="ENV_FILES" value="" />
@@ -184,13 +167,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="solution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AOC2024" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2024/day4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2024/day4/solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.solution" />
         <item itemvalue="Python.part2" />
         <item itemvalue="Python.part1 (1)" />
         <item itemvalue="Python.part1 (2)" />
         <item itemvalue="Python.part2 (1)" />
-        <item itemvalue="Python.part2 (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +219,9 @@
       <workItem from="1733100901003" duration="3863000" />
       <workItem from="1733105333716" duration="45000" />
       <workItem from="1733105394098" duration="6025000" />
-      <workItem from="1733184242227" duration="12029000" />
+      <workItem from="1733184242227" duration="12299000" />
+      <workItem from="1733354663110" duration="4083000" />
+      <workItem from="1733359597439" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="Part 1 of Day 1 complete">
       <option name="closed" value="true" />
@@ -247,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733209496241</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Day 3 complete">
+      <option name="closed" value="true" />
+      <created>1733209657823</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733209657823</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,10 +289,11 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AOC2024$part2.coverage" NAME="part2 Coverage Results" MODIFIED="1733104808241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/AOC2024$1.coverage" NAME="1 Coverage Results" MODIFIED="1733102197458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Advent_Of_Code$part2.coverage" NAME="part2 Coverage Results" MODIFIED="1733209397358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day3" />
+    <SUITE FILE_PATH="coverage/Advent_Of_Code$part2.coverage" NAME="part2 Coverage Results" MODIFIED="1733209708908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day3" />
     <SUITE FILE_PATH="coverage/AOC2024$1__1_.coverage" NAME="1 (1) Coverage Results" MODIFIED="1733103075453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part2__1_.coverage" NAME="part2 (1) Coverage Results" MODIFIED="1733185272898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day2" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__3_.coverage" NAME="part1 (3) Coverage Results" MODIFIED="1733125857061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2023/day1" />
+    <SUITE FILE_PATH="coverage/Advent_Of_Code$solution.coverage" NAME="solution Coverage Results" MODIFIED="1733360875872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day4" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1.coverage" NAME="part1 Coverage Results" MODIFIED="1733105351763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__2_.coverage" NAME="part1 (2) Coverage Results" MODIFIED="1733185962324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day2" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__1_.coverage" NAME="part1 (1) Coverage Results" MODIFIED="1733206241724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day3" />
