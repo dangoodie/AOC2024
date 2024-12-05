@@ -66,7 +66,7 @@ if __name__ == '__main__':
     print(part_2(rules, updates))
     part_2_time = time.time()
 
-    print(f"Completed in {part_2_time - start_time:.5f} seconds")
-    print(f"Loaded in {load_time - start_time:.5f} seconds")
-    print(f"Computed part 1 in {part_1_time - load_time:.5f} seconds")
-    print(f"Computed part 2 in {part_2_time - part_1_time:.5f} seconds")
+    print(f"Completed in {(part_2_time - start_time) * 1000:.3f} ms")
+    print(f"Loaded in {(load_time - start_time) * 1000:.3f} ms")
+    print(f"Computed part 1 in {(part_1_time - load_time) * 1000:.3f} ms")
+    print(f"Computed part 2 in {(part_2_time - part_1_time) * 1000:.3f} ms")
