@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01485e84-e426-4056-963e-7e95ccd617c5" name="Changes" comment="2023 day 1 complete">
-      <change afterPath="$PROJECT_DIR$/2024/day5/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2024/day5/solution.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2024/day5/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AOC2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AOC2024.iml" afterDir="false" />
+    <list default="true" id="01485e84-e426-4056-963e-7e95ccd617c5" name="Changes" comment="Change to ms">
+      <change afterPath="$PROJECT_DIR$/2024/day6/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2024/day6/solution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2024/day6/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +54,7 @@
     "Python.part2 (3).executor": "Run",
     "Python.part2 (4).executor": "Run",
     "Python.part2.executor": "Run",
+    "Python.solution (1).executor": "Run",
     "Python.solution.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -78,30 +78,7 @@
       <recent name="C:\Users\dango\PycharmProjects\AOC2024\day1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.solution">
-    <configuration name="part1 (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="AOC2024" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2023/day1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2023/day1/part1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.solution (1)">
     <configuration name="part2 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AOC2024" />
       <option name="ENV_FILES" value="" />
@@ -171,6 +148,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="solution (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AOC2024" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2024/day6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2024/day6/solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="solution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AOC2024" />
       <option name="ENV_FILES" value="" />
@@ -196,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.solution (1)" />
         <item itemvalue="Python.solution" />
         <item itemvalue="Python.part2 (4)" />
         <item itemvalue="Python.part2 (3)" />
         <item itemvalue="Python.part2 (2)" />
-        <item itemvalue="Python.part1 (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -225,6 +225,9 @@
       <workItem from="1733105394098" duration="6025000" />
       <workItem from="1733230775656" duration="163000" />
       <workItem from="1733233217960" duration="3430000" />
+      <workItem from="1733390275053" duration="510000" />
+      <workItem from="1733395037813" duration="989000" />
+      <workItem from="1733463956442" duration="5392000" />
     </task>
     <task id="LOCAL-00001" summary="Part 1 of Day 1 complete">
       <option name="closed" value="true" />
@@ -250,7 +253,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733116703919</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Day 5 complete">
+      <option name="closed" value="true" />
+      <created>1733385962910</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733385962910</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change to ms">
+      <option name="closed" value="true" />
+      <created>1733395103202</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733395103202</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +278,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Part 1 of Day 1 complete" />
     <MESSAGE value="Part 1 of Day 2 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Part 1 of Day 2 complete" />
+    <MESSAGE value="Day 5 complete" />
+    <MESSAGE value="Change to ms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change to ms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,9 +300,10 @@
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__3_.coverage" NAME="part1 (3) Coverage Results" MODIFIED="1733125857061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2023/day1" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part2__1_.coverage" NAME="part2 (1) Coverage Results" MODIFIED="1733123987119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day2" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__1_.coverage" NAME="part1 (1) Coverage Results" MODIFIED="1733115005675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day1" />
+    <SUITE FILE_PATH="coverage/Advent_Of_Code$solution__1_.coverage" NAME="solution (1) Coverage Results" MODIFIED="1733468949896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day6" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part2__2_.coverage" NAME="part2 (2) Coverage Results" MODIFIED="1733126411617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2023/day1" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part1__2_.coverage" NAME="part1 (2) Coverage Results" MODIFIED="1733116681051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day2" />
-    <SUITE FILE_PATH="coverage/Advent_Of_Code$solution.coverage" NAME="solution Coverage Results" MODIFIED="1733385611852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day5" />
+    <SUITE FILE_PATH="coverage/Advent_Of_Code$solution.coverage" NAME="solution Coverage Results" MODIFIED="1733390695082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day5" />
     <SUITE FILE_PATH="coverage/AOC2024$1__1_.coverage" NAME="1 (1) Coverage Results" MODIFIED="1733103075453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/Advent_Of_Code$part2.coverage" NAME="part2 Coverage Results" MODIFIED="1733115051847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2024/day1" />
     <SUITE FILE_PATH="coverage/AOC2024$1.coverage" NAME="1 Coverage Results" MODIFIED="1733102197458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
