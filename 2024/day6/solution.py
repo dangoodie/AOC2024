@@ -1,113 +1,145 @@
-import time
-import os
+from tqdm import tqdm
 
-GUARD_CHARS = ["^", ">", "v", "<"]
-DIRS = {"UP": (0, -1), "RIGHT": (1, 0), "DOWN": (0, 1), "LEFT":(-1, 0)}
-
-def is_in_bounds(x, y, width, height):
-    """Check if the coordinates are within bounds of the matrix."""
-    return 0 <= x < width and 0 <= y < height
-
-def get_direction(guard_char):
-    if guard_char == "^":
-        return DIRS["UP"]
-    if guard_char == ">":
-        return DIRS["RIGHT"]
-    if guard_char == "v":
-        return DIRS["DOWN"]
-    if guard_char == "<":
-        return DIRS["LEFT"]
-
-def turn_right(guard_char):
-    idx = GUARD_CHARS.index(guard_char)
-    idx += 1
-    if idx == len(GUARD_CHARS):
-        idx = 0
-    return GUARD_CHARS[idx]
+FREE = "."
+OBJECT = "#"
+GUARD_CHARS = {"^", ">", "v", "<"}
+ROTATE = {"^": ">", ">": "v", "v": "<", "<": "^"}
+DIRECTION_DELTAS = {"^": (-1, 0), ">": (0, 1), "v": (1, 0), "<": (0, -1)}
 
 
-def load_file(filename):
-    map = []
-    with open(filename) as f:
-        for line in f:
-            map.append(list(line.strip()))
+def read_input(input_file):
+    """Read the input map and extract the guard's starting position and direction."""
+    with open(input_file) as f:
+        lab = [list(line.strip()) for line in f]
 
-    return map
+    starting_position = None
+    starting_direction = None
 
-def get_guard_pos(map):
-    for y in range(0, len(map)):
-        for x in range(0, len(map[y])):
-            if map[y][x] in GUARD_CHARS:
-                return x, y, map[y][x]
-
-    return 0, 0
-
-def move_guard(x, y, direction, map):
-    temp_x = x + direction[0]
-    temp_y = y + direction[1]
-    if map[temp_y][temp_x] != "#":
-        map[temp_y][temp_x] = map[y][x]
-        map[y][x] = "X"
-        return temp_x, temp_y, map
-    else:
-        map[y][x] = turn_right(map[y][x])
-        return x, y, map
-
-def count_chars(map):
-    count = 0
-    for row in map:
-        for char in row:
-            if char == "X" or char in GUARD_CHARS:
-                count += 1
-    return count
-
-def print_map(map):
-    #os.system("cls" if os.name == "nt" else "clear")
-    for line in map:
-        print("".join(line))
-    print()
-    #time.sleep(0.2)
-
-def part_1(map):
-    x, y, guard_char = get_guard_pos(map)
-    direction = get_direction(guard_char)
-
-    visited_positions = set()
-    visited_positions.add((x, y))
-    while is_in_bounds(x, y, len(map[0]), len(map)):
-        # little animation for fun
-        # print_map(map)
-        try:
-            x, y, map = move_guard(x, y, direction, map)
-            guard_char = map[y][x]
-            direction = get_direction(guard_char)
-            visited_positions.add((x,y))
-        except Exception as e:
-            print(e)
-            print("found end")
+    for r, row in enumerate(lab):
+        for c, char in enumerate(row):
+            if char in GUARD_CHARS:
+                starting_direction = char
+                starting_position = (r, c)
+                lab[r][c] = FREE  # Replace guard position with FREE space
+                break
+        if starting_position is not None:
             break
 
-    # print_map(map)
-    return len(visited_positions)
+    return lab, DIRECTION_DELTAS[starting_direction], starting_position
 
-# def part_2(rules, updates):
-#     return sum(
-#         reorder_nums(rules, update)[len(update) // 2]
-#         for update in updates if not check_rules(rules, update)
-#     )
 
-if __name__ == '__main__':
-    start_time = time.time()
-    map = load_file("input.txt")
-    load_time = time.time()
-    print("<====== PART 1 ======>")
-    print(part_1(map))
-    part_1_time = time.time()
-    print("<====== PART 2 ======>")
-    # print(part_2(rules, updates))
-    part_2_time = time.time()
+def is_free(pos, lab):
+    """Check if the position is free (contains a dot)."""
+    return lab[pos[0]][pos[1]] == FREE
 
-    print(f"Completed in {(part_2_time - start_time) * 1000:.3f} ms")
-    print(f"Loaded in {(load_time - start_time) * 1000:.3f} ms")
-    print(f"Computed part 1 in {(part_1_time - load_time) * 1000:.3f} ms")
-    print(f"Computed part 2 in {(part_2_time - part_1_time) * 1000:.3f} ms")
+
+def is_object(pos, lab):
+    """Check if the position contains an obstacle (hash)."""
+    return lab[pos[0]][pos[1]] == OBJECT
+
+
+def in_grid(pos, lab):
+    """Check if the position is within the grid bounds."""
+    rows, cols = len(lab), len(lab[0])
+    return 0 <= pos[0] < rows and 0 <= pos[1] < cols
+
+
+def next_neighbour2(pos, direction):
+    """Get the next position based on the current direction."""
+    delta_r, delta_c = direction
+    return pos[0] + delta_r, pos[1] + delta_c
+
+
+def part1(input):
+    """Solve Part 1: Count distinct positions visited by the guard."""
+    lab, starting_direction, starting_position = input
+
+    guard_position = starting_position
+    guard_direction = starting_direction
+    visited = set([starting_position])
+
+    # Convert delta to arrow for ROTATE lookup
+    delta_to_arrow = {v: k for k, v in DIRECTION_DELTAS.items()}
+
+    while True:
+        next_position = next_neighbour2(guard_position, guard_direction)
+
+        if not in_grid(next_position, lab):
+            break
+        elif is_free(next_position, lab):
+            guard_position = next_position
+            visited.add(guard_position)
+        elif is_object(next_position, lab):
+            # Convert delta to arrow, rotate, and back to delta
+            guard_arrow = delta_to_arrow[guard_direction]
+            guard_direction = DIRECTION_DELTAS[ROTATE[guard_arrow]]
+        else:
+            raise ValueError(f"Unexpected position state at {next_position}")
+
+    return len(visited), visited
+
+
+def part2(input, visited_part1):
+    """Solve Part 2: Count valid obstruction positions."""
+    result = 0
+    lab, starting_direction, starting_position = input
+
+    # Convert delta to arrow for ROTATE lookup
+    delta_to_arrow = {v: k for k, v in DIRECTION_DELTAS.items()}
+
+    with tqdm(total=len(visited_part1), desc="Calculating Part 2") as pbar:
+        for new_object_pos in visited_part1:
+            # Skip the guard's starting position or positions that already have objects
+            if new_object_pos == starting_position or is_object(new_object_pos, lab):
+                pbar.update(1)
+                continue
+
+            guard_position = starting_position
+            guard_direction = starting_direction
+            visited = set()
+
+            while True:
+                next_position = next_neighbour2(guard_position, guard_direction)
+
+                if not in_grid(next_position, lab):
+                    break
+                elif is_object(next_position, lab) or next_position == new_object_pos:
+                    cur_pos_dir = (guard_position, guard_direction)
+
+                    if cur_pos_dir in visited:  # Loop detected
+                        result += 1
+                        break
+                    else:
+                        visited.add(cur_pos_dir)
+                        # Convert delta to arrow, rotate, and back to delta
+                        guard_arrow = delta_to_arrow[guard_direction]
+                        guard_direction = DIRECTION_DELTAS[ROTATE[guard_arrow]]
+                elif is_free(next_position, lab):
+                    guard_position = next_position
+                else:
+                    raise ValueError(f"Unexpected position state at {next_position}")
+
+            pbar.update(1)
+
+    return result
+
+def main():
+    input_file = "input.txt"
+    input = read_input(input_file)
+    test_input = read_input("test.txt")
+
+    # Part 1
+    test_result, test_visited = part1(test_input)
+    assert test_result == 41, f"Test Part 1 failed: Expected 41, got {test_result}"
+    result, visited = part1(input)
+    print(f"Part 1: Distinct positions visited = {result}")
+
+    # Part 2
+    test_part2_result = part2(test_input, test_visited)
+    assert test_part2_result == 6, f"Test Part 2 failed: Expected 6, got {test_part2_result}"
+    part2_result = part2(input, visited)
+    print(f"Part 2: Valid obstruction positions = {part2_result}")
+
+
+if __name__ == "__main__":
+    main()
